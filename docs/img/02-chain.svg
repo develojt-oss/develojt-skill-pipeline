@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="-16 -16 672 784" width="672" height="784" role="img" aria-label="A PRD epic becomes the SPEC's FR IDs, which continue into joblist rows and the code's @spec tags. At each seam, verify_prd_coverage, verify_joblist_spec_sync, verify_spec_coverage, and verify_refs catch omissions and ghosts, and at the end the pdca checker confirms responses and reach with evidence.">
+<title>Figure 2. The traceability chain</title>
+<style>
+svg {
+  --paper: #F2F4F6;
+  --sheet: #FFFFFF;
+  --ink: #16202A;
+  --ink-2: #4F5D6B;
+  --rule: #D3DAE1;
+  --flow: #1D5F8A;
+  --flow-soft: #E2EDF6;
+  --gate: #16795A;
+  --gate-soft: #DFF1E9;
+  --seal: #BF3A2E;
+  --seal-soft: #FBE6E2;
+  --agent: #94650F;
+  --agent-soft: #F5EDDA;
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+@media (prefers-color-scheme: dark) { svg {
+  --paper: #0E1419; --sheet: #141C23; --ink: #E2E8EE; --ink-2: #98A6B4; --rule: #2A3743;
+  --flow: #72B4E0; --flow-soft: #15283A; --gate: #4DC291; --gate-soft: #11302A;
+  --seal: #F07B6D; --seal-soft: #3A1E1A; --agent: #E0B25A; --agent-soft: #332811;
+  
+} }
+.bg { fill: var(--sheet); stroke: var(--rule); stroke-width: 1; }
+.mk-seal { display: inline-block; padding: 0 5px; border: 1.5px solid var(--seal); border-radius: 3px; background: var(--seal-soft); color: var(--seal); font-weight: 700; font-size: 11px; line-height: 17px; transform: rotate(-6deg); }
+.mk-gate { display: inline-block; padding: 0 7px; border: 1px solid var(--gate); border-radius: 9px; background: var(--gate-soft); color: var(--gate); font-family: var(--font-mono); font-size: 11px; line-height: 17px; }
+.mk-agent { display: inline-block; padding: 0 7px; border: 1px dashed var(--agent); border-radius: 9px; background: var(--agent-soft); color: var(--agent); font-weight: 700; font-size: 11px; line-height: 17px; }
+.mk-file { font-family: var(--font-mono); font-size: 12px; color: var(--flow); }
+.mk-opt { display: inline-block; width: 26px; height: 15px; border: 1.3px dashed var(--ink-2); border-radius: 4px; }
+.mk-ink { fill: var(--ink-2); }
+.mk-flowc { fill: var(--flow); }
+.dg text { font-family: var(--font-sans); font-size: 13px; fill: var(--ink); }
+.dg .tt { font-size: 14.5px; font-weight: 700; }
+.dg .th { font-size: 13.5px; font-weight: 700; }
+.dg .tr { font-size: 12.5px; }
+.dg .ts { font-size: 11.5px; fill: var(--ink-2); }
+.dg .tl { font-size: 12px; font-weight: 700; fill: var(--ink-2); letter-spacing: .02em; }
+.dg .tm { font-family: var(--font-mono); font-size: 11px; fill: var(--flow); }
+.dg .tmi { font-family: var(--font-mono); font-size: 11px; fill: var(--ink); }
+.dg .ta { font-size: 11.5px; font-weight: 700; fill: var(--agent); }
+.dg .b { font-weight: 700; }
+.dg .tc { text-anchor: middle; }
+.dg .te { text-anchor: end; }
+.dg .bad { fill: var(--seal); }
+.dg .good { fill: var(--gate); }
+.dg .node { fill: var(--sheet); stroke: var(--ink); stroke-width: 1.2; }
+.dg .node-opt { fill: var(--sheet); stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.dg .node-flow { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.3; }
+.dg .node-agent { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1.2; stroke-dasharray: 5 3; }
+.dg .node-muted { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; stroke-dasharray: 4 4; }
+.dg .note { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .snip { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .arr { fill: none; stroke: var(--ink-2); stroke-width: 1.4; marker-end: url(#ah); }
+.dg .arr-flow { fill: none; stroke: var(--flow); stroke-width: 1.6; marker-end: url(#ah-flow); }
+.dg .arr-dash { fill: none; stroke: var(--ink-2); stroke-width: 1.3; stroke-dasharray: 5 4; marker-end: url(#ah); }
+.dg .ln { fill: none; stroke: var(--ink-2); stroke-width: 1.4; }
+.dg .con { fill: none; stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.dg .sep { stroke: var(--rule); stroke-width: 1.2; stroke-dasharray: 6 5; }
+.dg .seal rect { fill: var(--seal-soft); stroke: var(--seal); stroke-width: 1.3; }
+.dg .seal text { fill: var(--seal); font-size: 10.5px; font-weight: 700; text-anchor: middle; }
+.dg .gate rect { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.1; }
+.dg .gate text { fill: var(--gate); font-family: var(--font-mono); font-size: 10.5px; text-anchor: middle; }
+.dg .agt rect { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1; stroke-dasharray: 3 2; }
+.dg .agt text { fill: var(--agent); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .role rect { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .role text { fill: var(--ink-2); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .num circle { fill: var(--ink); }
+.dg .num text { fill: var(--sheet); font-size: 11px; font-weight: 700; text-anchor: middle; }
+.dg .gdot circle { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.2; }
+.dg .gdot text { fill: var(--gate); font-size: 9px; font-weight: 700; text-anchor: middle; }
+.dg .cmd rect { fill: var(--sheet); stroke: var(--flow); stroke-width: 1.2; }
+.dg .cmd text { fill: var(--flow); font-family: var(--font-mono); font-size: 11px; text-anchor: middle; }
+.dg .band { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; }
+.dg .layer { fill: none; stroke: var(--rule); stroke-width: 1; }
+.dg .slice { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.4; }
+.dg .slice-main { stroke-width: 2.4; }
+</style>
+<defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-ink" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+    <marker id="ah-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-flowc" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+  </defs>
+<rect class="bg" x="-15.5" y="-15.5" width="671" height="783" rx="10"/>
+
+        <rect class="node" x="20" y="16" width="600" height="96" rx="8"/>
+        <text class="tt" x="40" y="50">PRD epic</text>
+        <text class="tm" x="40" y="72">plan/PRD.md</text>
+        <text class="ts" x="40" y="93">planner · human-finalized</text>
+        <rect class="snip" x="244" y="28" width="360" height="72" rx="6"/>
+        <text class="tmi" x="260" y="58">5. The staff member views the list</text>
+        <text class="tmi" x="281" y="80">of requests received today</text>
+
+        <path class="arr-flow" d="M60,114 V161"/>
+        <g class="gate"><rect x="84" y="127" width="167" height="22" rx="11"/><text x="167.5" y="142">✓ verify_prd_coverage.py</text></g>
+        <text class="ts" x="262" y="142">epics = EPs · no empty EP</text>
+
+        <rect class="node" x="20" y="164" width="600" height="96" rx="8"/>
+        <text class="tt" x="40" y="198">SPEC requirement</text>
+        <text class="tm" x="40" y="220">spec/SPEC.md</text>
+        <text class="ts" x="40" y="241">deriver · PRD traced by source tag</text>
+        <rect class="snip" x="244" y="176" width="360" height="72" rx="6"/>
+        <text class="tmi" x="260" y="198">| FR-05-001 | PRD EP-05 | Event-Driven |</text>
+        <text class="tmi" x="260" y="218">When the staff member opens the list,</text>
+        <text class="tmi" x="260" y="238">the system shall show today's requests</text>
+
+        <path class="arr-flow" d="M60,262 V309"/>
+        <g class="gate"><rect x="84" y="275" width="199" height="22" rx="11"/><text x="183.5" y="290">✓ verify_joblist_spec_sync.py</text></g>
+        <text class="ts" x="294" y="290">SPEC ↔ joblist · 0 missing IDs · 0 nonexistent IDs</text>
+
+        <rect class="node" x="20" y="312" width="600" height="96" rx="8"/>
+        <text class="tt" x="40" y="346">joblist row</text>
+        <text class="tm" x="40" y="368">spec/joblist.md</text>
+        <text class="ts" x="40" y="389">spliter builds it · builder checks it</text>
+        <rect class="snip" x="244" y="324" width="360" height="72" rx="6"/>
+        <text class="tmi" x="260" y="354">### Bundle 3: View the received list</text>
+        <text class="tmi" x="260" y="376">| [x] | FR-05-001 | — | |</text>
+
+        <path class="arr-flow" d="M60,410 V457"/>
+        <g class="gate"><rect x="84" y="423" width="174" height="22" rx="11"/><text x="171" y="438">✓ verify_spec_coverage.py</text></g>
+        <g class="gate"><rect x="266" y="423" width="117" height="22" rx="11"/><text x="324.5" y="438">✓ verify_refs.py</text></g>
+        <text class="ts" x="394" y="432">all FRs tagged · 0 nonexistent IDs</text>
+        <text class="ts" x="394" y="447">@spec on every function</text>
+
+        <rect class="node" x="20" y="460" width="600" height="128" rx="8"/>
+        <text class="tt" x="40" y="494">@spec in the code</text>
+        <text class="tm" x="40" y="516">src/</text>
+        <text class="ts" x="40" y="537">builder · a tag per function</text>
+        <rect class="snip" x="244" y="472" width="360" height="104" rx="6"/>
+        <text class="tmi" x="260" y="490">/**</text>
+        <text class="tmi" x="267" y="506">* Looks up the requests received today</text>
+        <text class="tmi" x="267" y="522">*</text>
+        <text class="tmi" x="267" y="538">* @spec FR-05-001</text>
+        <text class="tmi" x="267" y="554">*/</text>
+        <text class="tmi" x="260" y="570">function listTodayRequests() { … }</text>
+
+        <path class="arr" d="M60,590 V637"/>
+        <text class="ta" x="84" y="618">checks by reading the code · two ways, A and B</text>
+
+        <rect class="node-agent" x="20" y="640" width="600" height="96" rx="8"/>
+        <text class="tt" x="40" y="674">pdca checker</text>
+        <text class="tm" x="40" y="696">spec/findings.md</text>
+        <text class="ts" x="40" y="717">a separate check blind to the intent</text>
+        <rect class="snip" x="244" y="652" width="360" height="72" rx="6"/>
+        <text class="tr" x="260" y="676"><tspan class="b">M1</tspan> is the requirement's response actually produced</text>
+        <text class="tr" x="260" y="696"><tspan class="b">W1</tspan> is every behavior-chain outcome wired</text>
+        <text class="tr" x="260" y="716"><tspan class="b">W3</tspan> does anything actually call this function</text>
+      
+</svg>

@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="-16 -16 1112 552" width="1112" height="552" role="img" aria-label="Left, one cycle: Plan, the checker's Check, ledger recording, Act, the cycle log and archival, then the quiescence verdict. If not quiescent, the next cycle starts automatically. Right, the states of a defect row: it goes through New, Fixing, Awaiting recheck, and Resolved and is archived to the archive ledger; with counter-evidence it goes to Rejected, and when a human decision is needed, to Needs review.">
+<title>Figure 4. The pdca loop and defect states</title>
+<style>
+svg {
+  --paper: #F2F4F6;
+  --sheet: #FFFFFF;
+  --ink: #16202A;
+  --ink-2: #4F5D6B;
+  --rule: #D3DAE1;
+  --flow: #1D5F8A;
+  --flow-soft: #E2EDF6;
+  --gate: #16795A;
+  --gate-soft: #DFF1E9;
+  --seal: #BF3A2E;
+  --seal-soft: #FBE6E2;
+  --agent: #94650F;
+  --agent-soft: #F5EDDA;
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+@media (prefers-color-scheme: dark) { svg {
+  --paper: #0E1419; --sheet: #141C23; --ink: #E2E8EE; --ink-2: #98A6B4; --rule: #2A3743;
+  --flow: #72B4E0; --flow-soft: #15283A; --gate: #4DC291; --gate-soft: #11302A;
+  --seal: #F07B6D; --seal-soft: #3A1E1A; --agent: #E0B25A; --agent-soft: #332811;
+  
+} }
+.bg { fill: var(--sheet); stroke: var(--rule); stroke-width: 1; }
+.mk-seal { display: inline-block; padding: 0 5px; border: 1.5px solid var(--seal); border-radius: 3px; background: var(--seal-soft); color: var(--seal); font-weight: 700; font-size: 11px; line-height: 17px; transform: rotate(-6deg); }
+.mk-gate { display: inline-block; padding: 0 7px; border: 1px solid var(--gate); border-radius: 9px; background: var(--gate-soft); color: var(--gate); font-family: var(--font-mono); font-size: 11px; line-height: 17px; }
+.mk-agent { display: inline-block; padding: 0 7px; border: 1px dashed var(--agent); border-radius: 9px; background: var(--agent-soft); color: var(--agent); font-weight: 700; font-size: 11px; line-height: 17px; }
+.mk-file { font-family: var(--font-mono); font-size: 12px; color: var(--flow); }
+.mk-opt { display: inline-block; width: 26px; height: 15px; border: 1.3px dashed var(--ink-2); border-radius: 4px; }
+.mk-ink { fill: var(--ink-2); }
+.mk-flowc { fill: var(--flow); }
+.dg text { font-family: var(--font-sans); font-size: 13px; fill: var(--ink); }
+.dg .tt { font-size: 14.5px; font-weight: 700; }
+.dg .th { font-size: 13.5px; font-weight: 700; }
+.dg .tr { font-size: 12.5px; }
+.dg .ts { font-size: 11.5px; fill: var(--ink-2); }
+.dg .tl { font-size: 12px; font-weight: 700; fill: var(--ink-2); letter-spacing: .02em; }
+.dg .tm { font-family: var(--font-mono); font-size: 11px; fill: var(--flow); }
+.dg .tmi { font-family: var(--font-mono); font-size: 11px; fill: var(--ink); }
+.dg .ta { font-size: 11.5px; font-weight: 700; fill: var(--agent); }
+.dg .b { font-weight: 700; }
+.dg .tc { text-anchor: middle; }
+.dg .te { text-anchor: end; }
+.dg .bad { fill: var(--seal); }
+.dg .good { fill: var(--gate); }
+.dg .node { fill: var(--sheet); stroke: var(--ink); stroke-width: 1.2; }
+.dg .node-opt { fill: var(--sheet); stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.dg .node-flow { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.3; }
+.dg .node-agent { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1.2; stroke-dasharray: 5 3; }
+.dg .node-muted { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; stroke-dasharray: 4 4; }
+.dg .note { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .snip { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .arr { fill: none; stroke: var(--ink-2); stroke-width: 1.4; marker-end: url(#ah); }
+.dg .arr-flow { fill: none; stroke: var(--flow); stroke-width: 1.6; marker-end: url(#ah-flow); }
+.dg .arr-dash { fill: none; stroke: var(--ink-2); stroke-width: 1.3; stroke-dasharray: 5 4; marker-end: url(#ah); }
+.dg .ln { fill: none; stroke: var(--ink-2); stroke-width: 1.4; }
+.dg .con { fill: none; stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.dg .sep { stroke: var(--rule); stroke-width: 1.2; stroke-dasharray: 6 5; }
+.dg .seal rect { fill: var(--seal-soft); stroke: var(--seal); stroke-width: 1.3; }
+.dg .seal text { fill: var(--seal); font-size: 10.5px; font-weight: 700; text-anchor: middle; }
+.dg .gate rect { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.1; }
+.dg .gate text { fill: var(--gate); font-family: var(--font-mono); font-size: 10.5px; text-anchor: middle; }
+.dg .agt rect { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1; stroke-dasharray: 3 2; }
+.dg .agt text { fill: var(--agent); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .role rect { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .role text { fill: var(--ink-2); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .num circle { fill: var(--ink); }
+.dg .num text { fill: var(--sheet); font-size: 11px; font-weight: 700; text-anchor: middle; }
+.dg .gdot circle { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.2; }
+.dg .gdot text { fill: var(--gate); font-size: 9px; font-weight: 700; text-anchor: middle; }
+.dg .cmd rect { fill: var(--sheet); stroke: var(--flow); stroke-width: 1.2; }
+.dg .cmd text { fill: var(--flow); font-family: var(--font-mono); font-size: 11px; text-anchor: middle; }
+.dg .band { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; }
+.dg .layer { fill: none; stroke: var(--rule); stroke-width: 1; }
+.dg .slice { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.4; }
+.dg .slice-main { stroke-width: 2.4; }
+</style>
+<defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-ink" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+    <marker id="ah-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-flowc" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+  </defs>
+<rect class="bg" x="-15.5" y="-15.5" width="1111" height="551" rx="10"/>
+
+        <text class="tl" x="40" y="24">One check round · auto-repeats until quiescence</text>
+
+        <rect class="node" x="40" y="40" width="290" height="44" rx="8"/>
+        <text class="th" x="56" y="58">Plan · set the scope</text>
+        <text class="ts" x="56" y="75">recheck → open defects → requested scope</text>
+        <g class="role"><rect x="278" y="54" width="40" height="16" rx="8"/><text x="298" y="66">main</text></g>
+
+        <rect class="node-agent" x="40" y="104" width="290" height="44" rx="8"/>
+        <text class="th" x="56" y="122">Check · run the checker</text>
+        <text class="ts" x="56" y="139">passes only scope + existing defect IDs · way A/B</text>
+        <g class="agt"><rect x="270" y="110" width="56" height="16" rx="8"/><text x="298" y="122">checker</text></g>
+
+        <rect class="node" x="40" y="168" width="290" height="44" rx="8"/>
+        <text class="th" x="56" y="186">Record results</text>
+        <text class="ts" x="56" y="203">checker results → F-number rows</text>
+        <g class="gate"><rect x="226.05" y="181" width="102.9" height="18" rx="9"/><text x="277.5" y="194">✓ ledger check</text></g>
+
+        <rect class="node" x="40" y="232" width="290" height="44" rx="8"/>
+        <text class="th" x="56" y="250">Act · Fix/Reject/Needs review</text>
+        <text class="ts" x="56" y="267">rejection needs file:line counter-evidence</text>
+        <g class="role"><rect x="278" y="246" width="40" height="16" rx="8"/><text x="298" y="258">main</text></g>
+
+        <rect class="node" x="40" y="296" width="290" height="44" rx="8"/>
+        <text class="th" x="56" y="314">Check log · move to the archive</text>
+        <text class="ts" x="56" y="331">resolved defects → findings-archive.md</text>
+        <g class="role"><rect x="278" y="310" width="40" height="16" rx="8"/><text x="298" y="322">main</text></g>
+
+        <path class="arr" d="M185,86 V102"/>
+        <path class="arr" d="M185,150 V166"/>
+        <path class="arr" d="M185,214 V230"/>
+        <path class="arr" d="M185,278 V294"/>
+        <path class="arr" d="M185,342 V360"/>
+
+        <polygon class="node" points="185,362 245,392 185,422 125,392"/>
+        <text class="th tc" x="185" y="397">Quiescent?</text>
+        <path class="arr" d="M185,424 V444"/>
+        <text class="ts" x="193" y="438">yes</text>
+        <rect class="node-flow" x="40" y="446" width="290" height="52" rx="8"/>
+        <text class="th" x="56" y="467">Quiescence · back to the calling skill</text>
+        <text class="ts" x="56" y="486">0 new, 0 open twice in a row + once each by A, B</text>
+
+        <path class="arr" d="M125,392 H30 Q22,392 22,384 V70 Q22,62 30,62 H38"/>
+        <text class="ts tc" x="76" y="386">no</text>
+
+        <line class="sep" x1="380" y1="20" x2="380" y2="500"/>
+
+        <text class="tl" x="430" y="24">Defect states · spec/findings.md</text>
+
+        <rect class="node" x="430" y="60" width="120" height="40" rx="8"/>
+        <text class="th tc" x="490" y="85">New</text>
+        <rect class="node" x="630" y="60" width="120" height="40" rx="8"/>
+        <text class="th tc" x="690" y="85">Fixing</text>
+        <rect class="node" x="830" y="60" width="120" height="40" rx="8"/>
+        <text class="th tc" x="890" y="85">Awaiting recheck</text>
+
+        <rect class="node" x="430" y="200" width="120" height="40" rx="8"/>
+        <text class="th tc" x="490" y="225">Rejected</text>
+        <rect class="node" x="630" y="200" width="120" height="40" rx="8"/>
+        <text class="th tc" x="690" y="225">Needs review</text>
+        <g class="seal" transform="rotate(-6 744 200)"><rect x="710.6" y="191" width="66.8" height="18" rx="3"/><text x="744" y="204">Approval</text></g>
+        <rect class="node-flow" x="830" y="200" width="120" height="40" rx="8"/>
+        <text class="th tc" x="890" y="225">Resolved</text>
+
+        <rect class="node-muted" x="815" y="320" width="150" height="40" rx="8"/>
+        <text class="tm tc" x="890" y="345">findings-archive.md</text>
+
+        <path class="arr" d="M552,80 H627"/>
+        <text class="ts tc" x="589" y="72">fix starts</text>
+        <path class="arr" d="M752,80 H827"/>
+        <text class="ts tc" x="789" y="72">fix done</text>
+        <path class="arr" d="M890,58 V46 Q890,38 882,38 H498 Q490,38 490,46 V57"/>
+        <text class="ts tc" x="690" y="32">recheck: unresolved</text>
+        <path class="arr" d="M890,102 V197"/>
+        <text class="ts" x="898" y="154">recheck passed</text>
+        <path class="arr" d="M890,242 V317"/>
+        <text class="ts" x="898" y="284">moved to the archive</text>
+        <path class="arr" d="M490,102 V197"/>
+        <text class="ts te" x="482" y="154">counter-evidence</text>
+        <path class="arr" d="M520,102 L660,197"/>
+        <text class="ts te" x="588" y="160">human decision</text>
+        <text class="ts te" x="588" y="174">needed</text>
+        <path class="arr" d="M700,102 V197"/>
+        <text class="ts" x="708" y="154">unresolved 3 times in a row</text>
+
+        <text class="ts tc" x="490" y="262">kept on record so the same</text>
+        <text class="ts tc" x="490" y="277">finding is not repeated</text>
+        <text class="ts tc" x="690" y="262">human decision →</text>
+        <text class="ts tc" x="690" y="277">New · Rejected · Resolved</text>
+
+        <rect class="note" x="430" y="400" width="350" height="96" rx="6"/>
+        <text class="tr" x="446" y="424"><tspan class="b">Way A</tspan> starts from the @spec locations in the code</text>
+        <text class="tr" x="446" y="446"><tspan class="b">Way B</tspan> finds the code by words in the requirement text</text>
+        <text class="ts" x="446" y="470">Reading twice the same way gives the same result,</text>
+        <text class="ts" x="446" y="487">so the two quiescence rounds must use different ways</text>
+      
+</svg>

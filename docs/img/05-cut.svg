@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="-16 -16 1112 352" width="1112" height="352" role="img" aria-label="Left is a horizontal cut that makes the production, coordination, and presentation layers into bundles 1, 2, and 3, so finishing bundles 1 and 2 shows no observable change. Right is a thin through-slice bundle 1 passing all three layers, with increment bundles 2 and 3 adding results on top of it, so every bundle is observed. Under both lies the scaffolding, that is, the walking skeleton.">
+<title>Figure 5. Cutting bundles · split by layer vs. split end to end</title>
+<style>
+svg {
+  --paper: #F2F4F6;
+  --sheet: #FFFFFF;
+  --ink: #16202A;
+  --ink-2: #4F5D6B;
+  --rule: #D3DAE1;
+  --flow: #1D5F8A;
+  --flow-soft: #E2EDF6;
+  --gate: #16795A;
+  --gate-soft: #DFF1E9;
+  --seal: #BF3A2E;
+  --seal-soft: #FBE6E2;
+  --agent: #94650F;
+  --agent-soft: #F5EDDA;
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+@media (prefers-color-scheme: dark) { svg {
+  --paper: #0E1419; --sheet: #141C23; --ink: #E2E8EE; --ink-2: #98A6B4; --rule: #2A3743;
+  --flow: #72B4E0; --flow-soft: #15283A; --gate: #4DC291; --gate-soft: #11302A;
+  --seal: #F07B6D; --seal-soft: #3A1E1A; --agent: #E0B25A; --agent-soft: #332811;
+  
+} }
+.bg { fill: var(--sheet); stroke: var(--rule); stroke-width: 1; }
+.mk-seal { display: inline-block; padding: 0 5px; border: 1.5px solid var(--seal); border-radius: 3px; background: var(--seal-soft); color: var(--seal); font-weight: 700; font-size: 11px; line-height: 17px; transform: rotate(-6deg); }
+.mk-gate { display: inline-block; padding: 0 7px; border: 1px solid var(--gate); border-radius: 9px; background: var(--gate-soft); color: var(--gate); font-family: var(--font-mono); font-size: 11px; line-height: 17px; }
+.mk-agent { display: inline-block; padding: 0 7px; border: 1px dashed var(--agent); border-radius: 9px; background: var(--agent-soft); color: var(--agent); font-weight: 700; font-size: 11px; line-height: 17px; }
+.mk-file { font-family: var(--font-mono); font-size: 12px; color: var(--flow); }
+.mk-opt { display: inline-block; width: 26px; height: 15px; border: 1.3px dashed var(--ink-2); border-radius: 4px; }
+.mk-ink { fill: var(--ink-2); }
+.mk-flowc { fill: var(--flow); }
+.dg text { font-family: var(--font-sans); font-size: 13px; fill: var(--ink); }
+.dg .tt { font-size: 14.5px; font-weight: 700; }
+.dg .th { font-size: 13.5px; font-weight: 700; }
+.dg .tr { font-size: 12.5px; }
+.dg .ts { font-size: 11.5px; fill: var(--ink-2); }
+.dg .tl { font-size: 12px; font-weight: 700; fill: var(--ink-2); letter-spacing: .02em; }
+.dg .tm { font-family: var(--font-mono); font-size: 11px; fill: var(--flow); }
+.dg .tmi { font-family: var(--font-mono); font-size: 11px; fill: var(--ink); }
+.dg .ta { font-size: 11.5px; font-weight: 700; fill: var(--agent); }
+.dg .b { font-weight: 700; }
+.dg .tc { text-anchor: middle; }
+.dg .te { text-anchor: end; }
+.dg .bad { fill: var(--seal); }
+.dg .good { fill: var(--gate); }
+.dg .node { fill: var(--sheet); stroke: var(--ink); stroke-width: 1.2; }
+.dg .node-opt { fill: var(--sheet); stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.dg .node-flow { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.3; }
+.dg .node-agent { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1.2; stroke-dasharray: 5 3; }
+.dg .node-muted { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; stroke-dasharray: 4 4; }
+.dg .note { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .snip { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .arr { fill: none; stroke: var(--ink-2); stroke-width: 1.4; marker-end: url(#ah); }
+.dg .arr-flow { fill: none; stroke: var(--flow); stroke-width: 1.6; marker-end: url(#ah-flow); }
+.dg .arr-dash { fill: none; stroke: var(--ink-2); stroke-width: 1.3; stroke-dasharray: 5 4; marker-end: url(#ah); }
+.dg .ln { fill: none; stroke: var(--ink-2); stroke-width: 1.4; }
+.dg .con { fill: none; stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.dg .sep { stroke: var(--rule); stroke-width: 1.2; stroke-dasharray: 6 5; }
+.dg .seal rect { fill: var(--seal-soft); stroke: var(--seal); stroke-width: 1.3; }
+.dg .seal text { fill: var(--seal); font-size: 10.5px; font-weight: 700; text-anchor: middle; }
+.dg .gate rect { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.1; }
+.dg .gate text { fill: var(--gate); font-family: var(--font-mono); font-size: 10.5px; text-anchor: middle; }
+.dg .agt rect { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1; stroke-dasharray: 3 2; }
+.dg .agt text { fill: var(--agent); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .role rect { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .role text { fill: var(--ink-2); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .num circle { fill: var(--ink); }
+.dg .num text { fill: var(--sheet); font-size: 11px; font-weight: 700; text-anchor: middle; }
+.dg .gdot circle { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.2; }
+.dg .gdot text { fill: var(--gate); font-size: 9px; font-weight: 700; text-anchor: middle; }
+.dg .cmd rect { fill: var(--sheet); stroke: var(--flow); stroke-width: 1.2; }
+.dg .cmd text { fill: var(--flow); font-family: var(--font-mono); font-size: 11px; text-anchor: middle; }
+.dg .band { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; }
+.dg .layer { fill: none; stroke: var(--rule); stroke-width: 1; }
+.dg .slice { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.4; }
+.dg .slice-main { stroke-width: 2.4; }
+</style>
+<defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-ink" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+    <marker id="ah-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-flowc" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+  </defs>
+<rect class="bg" x="-15.5" y="-15.5" width="1111" height="351" rx="10"/>
+
+        <text class="th bad" x="20" y="26">✗ Splitting by layer</text>
+        <text class="ts te" x="90" y="78">display</text>
+        <text class="ts te" x="90" y="128">mid-processing</text>
+        <text class="ts te" x="90" y="178">data production</text>
+        <text class="ts te" x="90" y="232">base</text>
+        <rect class="band" x="100" y="48" width="400" height="46" rx="4"/>
+        <rect class="band" x="100" y="99" width="400" height="46" rx="4"/>
+        <rect class="band" x="100" y="150" width="400" height="46" rx="4"/>
+        <text class="th tc" x="262" y="76">Bundle 3 · all of the display</text>
+        <text class="th tc" x="262" y="127">Bundle 2 · all mid-processing</text>
+        <text class="th tc" x="262" y="178">Bundle 1 · all data production</text>
+        <text class="ts te good" x="490" y="76">first confirmed here</text>
+        <text class="ts te bad" x="490" y="127">not confirmable</text>
+        <text class="ts te bad" x="490" y="178">not confirmable</text>
+        <rect class="node" x="100" y="210" width="400" height="34" rx="4"/>
+        <text class="ts tc" x="300" y="232">Scaffolding · basic skeleton (an empty system that just builds and runs)</text>
+        <text class="ts" x="100" y="276">Even after bundles 1 and 2 are done, the user can see no change</text>
+        <text class="ts" x="100" y="296">Confirmation is pushed to the last bundle, and problems surface all at once</text>
+
+        <line class="sep" x1="540" y1="12" x2="540" y2="304"/>
+
+        <text class="th good" x="560" y="26">✓ Splitting end to end (the default)</text>
+        <text class="ts te" x="630" y="78">display</text>
+        <text class="ts te" x="630" y="128">mid-processing</text>
+        <text class="ts te" x="630" y="178">data production</text>
+        <text class="ts te" x="630" y="232">base</text>
+        <rect class="layer" x="640" y="48" width="400" height="46" rx="4"/>
+        <rect class="layer" x="640" y="99" width="400" height="46" rx="4"/>
+        <rect class="layer" x="640" y="150" width="400" height="46" rx="4"/>
+        <rect class="slice slice-main" x="648" y="42" width="64" height="160" rx="5"/>
+        <rect class="slice" x="720" y="42" width="150" height="160" rx="5"/>
+        <rect class="slice" x="878" y="42" width="150" height="160" rx="5"/>
+        <text class="th tc" x="680" y="112">Bundle 1</text>
+        <text class="ts tc" x="680" y="131">minimal</text>
+        <text class="ts tc" x="680" y="146">link</text>
+        <text class="th tc" x="795" y="112">Bundle 2</text>
+        <text class="ts tc" x="795" y="131">adds features</text>
+        <text class="th tc" x="953" y="112">Bundle 3</text>
+        <text class="ts tc" x="953" y="131">adds features</text>
+        <text class="ts tc good" x="680" y="190">confirmable</text>
+        <text class="ts tc good" x="795" y="190">confirmable</text>
+        <text class="ts tc good" x="953" y="190">confirmable</text>
+        <rect class="node" x="640" y="210" width="400" height="34" rx="4"/>
+        <text class="ts tc" x="840" y="232">Scaffolding · basic skeleton (an empty system that just builds and runs)</text>
+        <text class="ts" x="640" y="276">Every finished bundle is confirmable by a screen, response, or output</text>
+        <text class="ts" x="640" y="296">Exception: shared code used by several bundles may stand on its own</text>
+      
+</svg>

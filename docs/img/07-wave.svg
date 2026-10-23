@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="-16 -16 1112 412" width="1112" height="412" role="img" aria-label="The parallel wave is used only when all five prerequisites stand. Two slice agents each create only new files in their assigned folders and leave a manifest; then the lead completes, in bundle order, the manifest check, wiring, gates, the joblist record, and pdca quiescence. If a gate does not pass cleanly, that bundle falls back to sequential.">
+<title>Figure 7. Parallel work</title>
+<style>
+svg {
+  --paper: #F2F4F6;
+  --sheet: #FFFFFF;
+  --ink: #16202A;
+  --ink-2: #4F5D6B;
+  --rule: #D3DAE1;
+  --flow: #1D5F8A;
+  --flow-soft: #E2EDF6;
+  --gate: #16795A;
+  --gate-soft: #DFF1E9;
+  --seal: #BF3A2E;
+  --seal-soft: #FBE6E2;
+  --agent: #94650F;
+  --agent-soft: #F5EDDA;
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+@media (prefers-color-scheme: dark) { svg {
+  --paper: #0E1419; --sheet: #141C23; --ink: #E2E8EE; --ink-2: #98A6B4; --rule: #2A3743;
+  --flow: #72B4E0; --flow-soft: #15283A; --gate: #4DC291; --gate-soft: #11302A;
+  --seal: #F07B6D; --seal-soft: #3A1E1A; --agent: #E0B25A; --agent-soft: #332811;
+  
+} }
+.bg { fill: var(--sheet); stroke: var(--rule); stroke-width: 1; }
+.mk-seal { display: inline-block; padding: 0 5px; border: 1.5px solid var(--seal); border-radius: 3px; background: var(--seal-soft); color: var(--seal); font-weight: 700; font-size: 11px; line-height: 17px; transform: rotate(-6deg); }
+.mk-gate { display: inline-block; padding: 0 7px; border: 1px solid var(--gate); border-radius: 9px; background: var(--gate-soft); color: var(--gate); font-family: var(--font-mono); font-size: 11px; line-height: 17px; }
+.mk-agent { display: inline-block; padding: 0 7px; border: 1px dashed var(--agent); border-radius: 9px; background: var(--agent-soft); color: var(--agent); font-weight: 700; font-size: 11px; line-height: 17px; }
+.mk-file { font-family: var(--font-mono); font-size: 12px; color: var(--flow); }
+.mk-opt { display: inline-block; width: 26px; height: 15px; border: 1.3px dashed var(--ink-2); border-radius: 4px; }
+.mk-ink { fill: var(--ink-2); }
+.mk-flowc { fill: var(--flow); }
+.dg text { font-family: var(--font-sans); font-size: 13px; fill: var(--ink); }
+.dg .tt { font-size: 14.5px; font-weight: 700; }
+.dg .th { font-size: 13.5px; font-weight: 700; }
+.dg .tr { font-size: 12.5px; }
+.dg .ts { font-size: 11.5px; fill: var(--ink-2); }
+.dg .tl { font-size: 12px; font-weight: 700; fill: var(--ink-2); letter-spacing: .02em; }
+.dg .tm { font-family: var(--font-mono); font-size: 11px; fill: var(--flow); }
+.dg .tmi { font-family: var(--font-mono); font-size: 11px; fill: var(--ink); }
+.dg .ta { font-size: 11.5px; font-weight: 700; fill: var(--agent); }
+.dg .b { font-weight: 700; }
+.dg .tc { text-anchor: middle; }
+.dg .te { text-anchor: end; }
+.dg .bad { fill: var(--seal); }
+.dg .good { fill: var(--gate); }
+.dg .node { fill: var(--sheet); stroke: var(--ink); stroke-width: 1.2; }
+.dg .node-opt { fill: var(--sheet); stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.dg .node-flow { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.3; }
+.dg .node-agent { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1.2; stroke-dasharray: 5 3; }
+.dg .node-muted { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; stroke-dasharray: 4 4; }
+.dg .note { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .snip { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .arr { fill: none; stroke: var(--ink-2); stroke-width: 1.4; marker-end: url(#ah); }
+.dg .arr-flow { fill: none; stroke: var(--flow); stroke-width: 1.6; marker-end: url(#ah-flow); }
+.dg .arr-dash { fill: none; stroke: var(--ink-2); stroke-width: 1.3; stroke-dasharray: 5 4; marker-end: url(#ah); }
+.dg .ln { fill: none; stroke: var(--ink-2); stroke-width: 1.4; }
+.dg .con { fill: none; stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.dg .sep { stroke: var(--rule); stroke-width: 1.2; stroke-dasharray: 6 5; }
+.dg .seal rect { fill: var(--seal-soft); stroke: var(--seal); stroke-width: 1.3; }
+.dg .seal text { fill: var(--seal); font-size: 10.5px; font-weight: 700; text-anchor: middle; }
+.dg .gate rect { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.1; }
+.dg .gate text { fill: var(--gate); font-family: var(--font-mono); font-size: 10.5px; text-anchor: middle; }
+.dg .agt rect { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1; stroke-dasharray: 3 2; }
+.dg .agt text { fill: var(--agent); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .role rect { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .role text { fill: var(--ink-2); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .num circle { fill: var(--ink); }
+.dg .num text { fill: var(--sheet); font-size: 11px; font-weight: 700; text-anchor: middle; }
+.dg .gdot circle { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.2; }
+.dg .gdot text { fill: var(--gate); font-size: 9px; font-weight: 700; text-anchor: middle; }
+.dg .cmd rect { fill: var(--sheet); stroke: var(--flow); stroke-width: 1.2; }
+.dg .cmd text { fill: var(--flow); font-family: var(--font-mono); font-size: 11px; text-anchor: middle; }
+.dg .band { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; }
+.dg .layer { fill: none; stroke: var(--rule); stroke-width: 1; }
+.dg .slice { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.4; }
+.dg .slice-main { stroke-width: 2.4; }
+</style>
+<defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-ink" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+    <marker id="ah-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-flowc" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+  </defs>
+<rect class="bg" x="-15.5" y="-15.5" width="1111" height="411" rx="10"/>
+
+        <text class="tl" x="20" y="20">Conditions · if any one is missing, work goes sequential</text>
+        <g class="gate"><rect x="20" y="32" width="205" height="22" rx="11"/><text x="122.5" y="47">✓ structure contract finalized</text></g>
+        <g class="gate"><rect x="235" y="32" width="192" height="22" rx="11"/><text x="331" y="47">✓ basic skeleton · run check</text></g>
+        <g class="gate"><rect x="437" y="32" width="212" height="22" rx="11"/><text x="543" y="47">✓ same parallel-candidate group</text></g>
+        <g class="gate"><rect x="659" y="32" width="98" height="22" rx="11"/><text x="708" y="47">✓ 2–3 bundles</text></g>
+        <g class="seal" transform="rotate(-6 801 43)"><rect x="767.6" y="34" width="66.8" height="18" rx="3"/><text x="801" y="47">Approval</text></g>
+        <text class="tr" x="845" y="48">human approval</text>
+
+        <text class="tl" x="40" y="86">Only implementation runs in parallel · agents never reference each other</text>
+        <rect class="node-agent" x="40" y="98" width="480" height="56" rx="8"/>
+        <text class="th" x="60" y="121">Implementation agent · Bundle A</text>
+        <text class="ts" x="60" y="141">creates only new files in assigned folder A; never edits existing files</text>
+        <rect class="node-agent" x="40" y="170" width="480" height="56" rx="8"/>
+        <text class="th" x="60" y="193">Implementation agent · Bundle B</text>
+        <text class="ts" x="60" y="213">creates only new files in assigned folder B; never edits existing files</text>
+
+        <text class="ts tc" x="660" y="98">wiring request lists</text>
+        <path class="arr" d="M522,126 H557"/>
+        <path class="arr" d="M522,198 H557"/>
+        <rect class="node" x="560" y="106" width="200" height="40" rx="8"/>
+        <text class="tm tc" x="660" y="131">spec/wave-merge-bundleA.md</text>
+        <rect class="node" x="560" y="178" width="200" height="40" rx="8"/>
+        <text class="tm tc" x="660" y="203">spec/wave-merge-bundleB.md</text>
+
+        <path class="ln" d="M762,198 H798"/>
+        <path class="arr" d="M762,126 H790 Q798,126 798,134 V246 Q798,254 790,254 H208 Q200,254 200,262 V273"/>
+        <text class="ts tc" x="460" y="247">when done, merged in bundle order</text>
+
+        <rect class="note" x="880" y="98" width="185" height="128" rx="6"/>
+        <text class="th" x="894" y="122">If trouble: sequential</text>
+        <text class="ts" x="894" y="146">if any verification fails,</text>
+        <text class="ts" x="894" y="164">that bundle goes sequential</text>
+        <text class="ts" x="894" y="188">the main session never writes</text>
+        <text class="ts" x="894" y="206">a stalled agent's code for it</text>
+
+        <text class="tl" x="214" y="268">The main session merges them in turn</text>
+        <rect class="node" x="40" y="276" width="180" height="60" rx="8"/>
+        <text class="th" x="56" y="298">a · location check</text>
+        <text class="ts" x="56" y="316">new files in assigned folders?</text>
+        <text class="ts" x="56" y="332">full cross-check via git status</text>
+        <rect class="node" x="242" y="276" width="180" height="60" rx="8"/>
+        <text class="th" x="258" y="298">b · wire existing files</text>
+        <text class="ts" x="258" y="316">the main session edits them,</text>
+        <text class="ts" x="258" y="332">per the wiring request list</text>
+        <rect class="node" x="444" y="276" width="180" height="60" rx="8"/>
+        <text class="th" x="460" y="298">c · verification</text>
+        <text class="ts" x="460" y="316">4 verifications + run check</text>
+        <text class="ts" x="460" y="332">failures handled as sequential</text>
+        <rect class="node" x="646" y="276" width="180" height="60" rx="8"/>
+        <text class="th" x="662" y="298">d · joblist record</text>
+        <text class="ts" x="662" y="316">basis: pass + wiring check</text>
+        <text class="ts" x="662" y="332">agent reports are no basis</text>
+        <rect class="node" x="848" y="276" width="180" height="60" rx="8"/>
+        <text class="th" x="864" y="298">e · pdca → quiescence</text>
+        <text class="ts" x="864" y="316">completion as in sequential</text>
+        <text class="ts" x="864" y="332">then the next bundle</text>
+        <path class="arr" d="M222,306 H239"/>
+        <path class="arr" d="M424,306 H441"/>
+        <path class="arr" d="M626,306 H643"/>
+        <path class="arr" d="M828,306 H845"/>
+
+        <text class="ts" x="40" y="366">The wave report records each agent's verification result, re-run count, and sequential fallback; from this record the human decides whether to widen or narrow parallel work</text>
+      
+</svg>

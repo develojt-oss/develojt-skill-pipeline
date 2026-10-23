@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="-16 -16 1112 532" width="1112" height="532" role="img" aria-label="In the development phase, planner, deriver, the optional mapper, spliter, and builder follow in order, and builder and pdca loop for every bundle. When all bundles are done, the screen-comparison session leads to development-draft completion. Changes in the operations phase are taken in by changer and handled in the order of the deriver/mapper procedures, code, and a pdca recheck.">
+<title>Figure 1. Overall flow</title>
+<style>
+svg {
+  --paper: #F2F4F6;
+  --sheet: #FFFFFF;
+  --ink: #16202A;
+  --ink-2: #4F5D6B;
+  --rule: #D3DAE1;
+  --flow: #1D5F8A;
+  --flow-soft: #E2EDF6;
+  --gate: #16795A;
+  --gate-soft: #DFF1E9;
+  --seal: #BF3A2E;
+  --seal-soft: #FBE6E2;
+  --agent: #94650F;
+  --agent-soft: #F5EDDA;
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+@media (prefers-color-scheme: dark) { svg {
+  --paper: #0E1419; --sheet: #141C23; --ink: #E2E8EE; --ink-2: #98A6B4; --rule: #2A3743;
+  --flow: #72B4E0; --flow-soft: #15283A; --gate: #4DC291; --gate-soft: #11302A;
+  --seal: #F07B6D; --seal-soft: #3A1E1A; --agent: #E0B25A; --agent-soft: #332811;
+  
+} }
+.bg { fill: var(--sheet); stroke: var(--rule); stroke-width: 1; }
+.mk-seal { display: inline-block; padding: 0 5px; border: 1.5px solid var(--seal); border-radius: 3px; background: var(--seal-soft); color: var(--seal); font-weight: 700; font-size: 11px; line-height: 17px; transform: rotate(-6deg); }
+.mk-gate { display: inline-block; padding: 0 7px; border: 1px solid var(--gate); border-radius: 9px; background: var(--gate-soft); color: var(--gate); font-family: var(--font-mono); font-size: 11px; line-height: 17px; }
+.mk-agent { display: inline-block; padding: 0 7px; border: 1px dashed var(--agent); border-radius: 9px; background: var(--agent-soft); color: var(--agent); font-weight: 700; font-size: 11px; line-height: 17px; }
+.mk-file { font-family: var(--font-mono); font-size: 12px; color: var(--flow); }
+.mk-opt { display: inline-block; width: 26px; height: 15px; border: 1.3px dashed var(--ink-2); border-radius: 4px; }
+.mk-ink { fill: var(--ink-2); }
+.mk-flowc { fill: var(--flow); }
+.dg text { font-family: var(--font-sans); font-size: 13px; fill: var(--ink); }
+.dg .tt { font-size: 14.5px; font-weight: 700; }
+.dg .th { font-size: 13.5px; font-weight: 700; }
+.dg .tr { font-size: 12.5px; }
+.dg .ts { font-size: 11.5px; fill: var(--ink-2); }
+.dg .tl { font-size: 12px; font-weight: 700; fill: var(--ink-2); letter-spacing: .02em; }
+.dg .tm { font-family: var(--font-mono); font-size: 11px; fill: var(--flow); }
+.dg .tmi { font-family: var(--font-mono); font-size: 11px; fill: var(--ink); }
+.dg .ta { font-size: 11.5px; font-weight: 700; fill: var(--agent); }
+.dg .b { font-weight: 700; }
+.dg .tc { text-anchor: middle; }
+.dg .te { text-anchor: end; }
+.dg .bad { fill: var(--seal); }
+.dg .good { fill: var(--gate); }
+.dg .node { fill: var(--sheet); stroke: var(--ink); stroke-width: 1.2; }
+.dg .node-opt { fill: var(--sheet); stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.dg .node-flow { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.3; }
+.dg .node-agent { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1.2; stroke-dasharray: 5 3; }
+.dg .node-muted { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; stroke-dasharray: 4 4; }
+.dg .note { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .snip { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .arr { fill: none; stroke: var(--ink-2); stroke-width: 1.4; marker-end: url(#ah); }
+.dg .arr-flow { fill: none; stroke: var(--flow); stroke-width: 1.6; marker-end: url(#ah-flow); }
+.dg .arr-dash { fill: none; stroke: var(--ink-2); stroke-width: 1.3; stroke-dasharray: 5 4; marker-end: url(#ah); }
+.dg .ln { fill: none; stroke: var(--ink-2); stroke-width: 1.4; }
+.dg .con { fill: none; stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.dg .sep { stroke: var(--rule); stroke-width: 1.2; stroke-dasharray: 6 5; }
+.dg .seal rect { fill: var(--seal-soft); stroke: var(--seal); stroke-width: 1.3; }
+.dg .seal text { fill: var(--seal); font-size: 10.5px; font-weight: 700; text-anchor: middle; }
+.dg .gate rect { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.1; }
+.dg .gate text { fill: var(--gate); font-family: var(--font-mono); font-size: 10.5px; text-anchor: middle; }
+.dg .agt rect { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1; stroke-dasharray: 3 2; }
+.dg .agt text { fill: var(--agent); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .role rect { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .role text { fill: var(--ink-2); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .num circle { fill: var(--ink); }
+.dg .num text { fill: var(--sheet); font-size: 11px; font-weight: 700; text-anchor: middle; }
+.dg .gdot circle { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.2; }
+.dg .gdot text { fill: var(--gate); font-size: 9px; font-weight: 700; text-anchor: middle; }
+.dg .cmd rect { fill: var(--sheet); stroke: var(--flow); stroke-width: 1.2; }
+.dg .cmd text { fill: var(--flow); font-family: var(--font-mono); font-size: 11px; text-anchor: middle; }
+.dg .band { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; }
+.dg .layer { fill: none; stroke: var(--rule); stroke-width: 1; }
+.dg .slice { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.4; }
+.dg .slice-main { stroke-width: 2.4; }
+</style>
+<defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-ink" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+    <marker id="ah-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-flowc" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+  </defs>
+<rect class="bg" x="-15.5" y="-15.5" width="1111" height="531" rx="10"/>
+
+        <text class="tl" x="16" y="22">Development phase · the human runs each step in order with slash commands</text>
+        <path class="arr-dash" d="M330,46 V36 Q330,30 336,30 H744 Q750,30 750,36 V46"/>
+        <text class="ts tc" x="610" y="22">without design/, mapper is skipped</text>
+
+        <rect class="node" x="35" y="48" width="170" height="96" rx="8"/>
+        <text class="tt tc" x="120" y="84">planner</text>
+        <text class="tr tc" x="120" y="105">requirement draft · human-led</text>
+        <text class="tm tc" x="120" y="125">plan/PRD.md</text>
+        <g class="seal" transform="rotate(-6 179 48)"><rect x="145.6" y="39" width="66.8" height="18" rx="3"/><text x="179" y="52">Approval</text></g>
+        <g class="gate"><rect x="71" y="135" width="98" height="18" rx="9"/><text x="120" y="148">✓ validate.py</text></g>
+
+        <rect class="node" x="245" y="48" width="170" height="96" rx="8"/>
+        <g class="agt"><rect x="253" y="55" width="66" height="15" rx="7.5"/><text x="286" y="66">2 agents</text></g>
+        <text class="tt tc" x="330" y="84">deriver</text>
+        <text class="tr tc" x="330" y="105">writes EARS requirements</text>
+        <text class="tm tc" x="330" y="125">spec/SPEC.md</text>
+        <g class="seal" transform="rotate(-6 389 48)"><rect x="355.6" y="39" width="66.8" height="18" rx="3"/><text x="389" y="52">Approval</text></g>
+        <g class="gate"><rect x="287.5" y="135" width="85" height="18" rx="9"/><text x="330" y="148">✓ verify ×3</text></g>
+
+        <rect class="node-opt" x="455" y="48" width="170" height="96" rx="8"/>
+        <g class="agt"><rect x="463" y="55" width="66" height="15" rx="7.5"/><text x="496" y="66">2 agents</text></g>
+        <text class="tt tc" x="540" y="84">mapper</text>
+        <text class="tr tc" x="540" y="105">design ↔ requirement map</text>
+        <text class="tm tc" x="540" y="125">design/STORYBOARD.md</text>
+        <g class="seal" transform="rotate(-6 599 48)"><rect x="565.6" y="39" width="66.8" height="18" rx="3"/><text x="599" y="52">Approval</text></g>
+        <g class="gate"><rect x="497.5" y="135" width="85" height="18" rx="9"/><text x="540" y="148">✓ verify ×2</text></g>
+
+        <rect class="node" x="665" y="48" width="170" height="96" rx="8"/>
+        <text class="tt tc" x="750" y="84">spliter</text>
+        <text class="tr tc" x="750" y="105">progress list by bundle</text>
+        <text class="tm tc" x="750" y="125">spec/joblist.md</text>
+        <g class="gate"><rect x="707.5" y="135" width="85" height="18" rx="9"/><text x="750" y="148">✓ verify ×3</text></g>
+
+        <rect class="node" x="875" y="48" width="170" height="96" rx="8"/>
+        <text class="tt tc" x="960" y="84">builder</text>
+        <text class="tr tc" x="960" y="105">implements per bundle</text>
+        <text class="tm tc" x="960" y="125">src/</text>
+        <g class="seal" transform="rotate(-6 1019 48)"><rect x="985.6" y="39" width="66.8" height="18" rx="3"/><text x="1019" y="52">Approval</text></g>
+        <g class="gate"><rect x="895.5" y="135" width="129" height="18" rx="9"/><text x="960" y="148">✓ verify ×4 + boot</text></g>
+
+        <path class="arr-flow" d="M207,96 H242"/>
+        <path class="arr-flow" d="M417,96 H452"/>
+        <path class="arr-flow" d="M627,96 H662"/>
+        <path class="arr-flow" d="M837,96 H872"/>
+
+        <path class="arr-flow" d="M925,156 V233"/>
+        <path class="arr-flow" d="M995,234 V157"/>
+        <text class="ts te" x="917" y="199">runs automatically</text>
+        <text class="ts tc" x="960" y="199">per bundle</text>
+        <text class="ts" x="1003" y="192">quiescence</text>
+        <text class="ts" x="1003" y="207">→ return</text>
+
+        <rect class="node" x="875" y="236" width="170" height="96" rx="8"/>
+        <g class="agt"><rect x="879" y="243" width="98" height="15" rx="7.5"/><text x="928" y="254">isolated checker</text></g>
+        <text class="tt tc" x="960" y="272">pdca</text>
+        <text class="tr tc" x="960" y="293">repeated omission checks</text>
+        <text class="tm tc" x="960" y="313">spec/findings.md</text>
+        <g class="gate"><rect x="908.55" y="323" width="102.9" height="18" rx="9"/><text x="960" y="336">✓ ledger check</text></g>
+
+        <path class="arr-flow" d="M873,284 H763"/>
+        <text class="ts tc" x="817" y="276">after all bundles</text>
+
+        <rect class="node-opt" x="560" y="236" width="200" height="96" rx="8"/>
+        <text class="th tc" x="660" y="272">Screen comparison session</text>
+        <text class="tr tc" x="660" y="293">running screen ↔ design</text>
+        <text class="tm tc" x="660" y="313">spec/screen-review.md</text>
+        <g class="seal" transform="rotate(-6 734 236)"><rect x="700.6" y="227" width="66.8" height="18" rx="3"/><text x="734" y="240">Approval</text></g>
+
+        <path class="arr-flow" d="M558,284 H473"/>
+        <text class="ts tc" x="516" y="276">0 items left</text>
+
+        <rect class="node-flow" x="300" y="262" width="170" height="44" rx="22"/>
+        <text class="th tc" x="385" y="281">Development draft</text>
+        <text class="th tc" x="385" y="298">complete</text>
+
+        <path class="arr-dash" d="M385,308 V409"/>
+        <text class="ts te" x="377" y="340">later changes</text>
+
+        <line class="sep" x1="10" y1="362" x2="1070" y2="362"/>
+        <text class="tl" x="397" y="386">Operations phase · all changes after development-draft completion go to changer</text>
+
+        <rect class="node-muted" x="35" y="412" width="150" height="64" rx="32"/>
+        <text class="th tc" x="110" y="440">Change request</text>
+        <text class="ts tc" x="110" y="459">asked in words</text>
+
+        <rect class="node" x="235" y="412" width="200" height="64" rx="8"/>
+        <text class="tt tc" x="335" y="440">changer</text>
+        <text class="tr tc" x="335" y="460">intake · classify · confirm</text>
+        <g class="seal" transform="rotate(-6 413 412)"><rect x="379.6" y="403" width="66.8" height="18" rx="3"/><text x="413" y="416">Approval</text></g>
+
+        <rect class="node" x="485" y="412" width="230" height="64" rx="8"/>
+        <text class="th tc" x="600" y="440">deriver · mapper procedures</text>
+        <text class="ts tc" x="600" y="459">in order: SPEC → STORYBOARD</text>
+        <g class="gate"><rect x="526.325" y="467" width="147.35" height="18" rx="9"/><text x="600" y="480">✓ pass at every stage</text></g>
+
+        <rect class="node" x="765" y="412" width="140" height="64" rx="8"/>
+        <text class="th tc" x="835" y="440">Code</text>
+        <text class="ts tc" x="835" y="459">builder's 5 principles</text>
+        <g class="gate"><rect x="777.2" y="467" width="115.6" height="18" rx="9"/><text x="835" y="480">✓ verify scripts</text></g>
+
+        <rect class="node" x="935" y="412" width="130" height="64" rx="8"/>
+        <text class="th tc" x="1000" y="440">pdca recheck</text>
+        <text class="ts tc" x="1000" y="459">required on candidates</text>
+
+        <path class="arr" d="M187,444 H232"/>
+        <path class="arr" d="M437,444 H482"/>
+        <path class="arr" d="M717,444 H762"/>
+        <path class="arr" d="M907,444 H932"/>
+      
+</svg>

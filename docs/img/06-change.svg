@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="-16 -16 1112 552" width="1112" height="552" role="img" aria-label="changer classifies a change request as addition, candidate adoption, change and deletion, conflict resolution A or B, or code only, and sends it through the SPEC stage, the STORYBOARD stage, and the code stage in order. Each stage's verification must pass before the next, and after the code is fixed, the common checks run, plus a pdca recheck when needed. Requirements during development and ongoing new development are not taken by changer but guided to other skills.">
+<title>Figure 6. Handling changes in operations</title>
+<style>
+svg {
+  --paper: #F2F4F6;
+  --sheet: #FFFFFF;
+  --ink: #16202A;
+  --ink-2: #4F5D6B;
+  --rule: #D3DAE1;
+  --flow: #1D5F8A;
+  --flow-soft: #E2EDF6;
+  --gate: #16795A;
+  --gate-soft: #DFF1E9;
+  --seal: #BF3A2E;
+  --seal-soft: #FBE6E2;
+  --agent: #94650F;
+  --agent-soft: #F5EDDA;
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+@media (prefers-color-scheme: dark) { svg {
+  --paper: #0E1419; --sheet: #141C23; --ink: #E2E8EE; --ink-2: #98A6B4; --rule: #2A3743;
+  --flow: #72B4E0; --flow-soft: #15283A; --gate: #4DC291; --gate-soft: #11302A;
+  --seal: #F07B6D; --seal-soft: #3A1E1A; --agent: #E0B25A; --agent-soft: #332811;
+  
+} }
+.bg { fill: var(--sheet); stroke: var(--rule); stroke-width: 1; }
+.mk-seal { display: inline-block; padding: 0 5px; border: 1.5px solid var(--seal); border-radius: 3px; background: var(--seal-soft); color: var(--seal); font-weight: 700; font-size: 11px; line-height: 17px; transform: rotate(-6deg); }
+.mk-gate { display: inline-block; padding: 0 7px; border: 1px solid var(--gate); border-radius: 9px; background: var(--gate-soft); color: var(--gate); font-family: var(--font-mono); font-size: 11px; line-height: 17px; }
+.mk-agent { display: inline-block; padding: 0 7px; border: 1px dashed var(--agent); border-radius: 9px; background: var(--agent-soft); color: var(--agent); font-weight: 700; font-size: 11px; line-height: 17px; }
+.mk-file { font-family: var(--font-mono); font-size: 12px; color: var(--flow); }
+.mk-opt { display: inline-block; width: 26px; height: 15px; border: 1.3px dashed var(--ink-2); border-radius: 4px; }
+.mk-ink { fill: var(--ink-2); }
+.mk-flowc { fill: var(--flow); }
+.dg text { font-family: var(--font-sans); font-size: 13px; fill: var(--ink); }
+.dg .tt { font-size: 14.5px; font-weight: 700; }
+.dg .th { font-size: 13.5px; font-weight: 700; }
+.dg .tr { font-size: 12.5px; }
+.dg .ts { font-size: 11.5px; fill: var(--ink-2); }
+.dg .tl { font-size: 12px; font-weight: 700; fill: var(--ink-2); letter-spacing: .02em; }
+.dg .tm { font-family: var(--font-mono); font-size: 11px; fill: var(--flow); }
+.dg .tmi { font-family: var(--font-mono); font-size: 11px; fill: var(--ink); }
+.dg .ta { font-size: 11.5px; font-weight: 700; fill: var(--agent); }
+.dg .b { font-weight: 700; }
+.dg .tc { text-anchor: middle; }
+.dg .te { text-anchor: end; }
+.dg .bad { fill: var(--seal); }
+.dg .good { fill: var(--gate); }
+.dg .node { fill: var(--sheet); stroke: var(--ink); stroke-width: 1.2; }
+.dg .node-opt { fill: var(--sheet); stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.dg .node-flow { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.3; }
+.dg .node-agent { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1.2; stroke-dasharray: 5 3; }
+.dg .node-muted { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; stroke-dasharray: 4 4; }
+.dg .note { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .snip { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .arr { fill: none; stroke: var(--ink-2); stroke-width: 1.4; marker-end: url(#ah); }
+.dg .arr-flow { fill: none; stroke: var(--flow); stroke-width: 1.6; marker-end: url(#ah-flow); }
+.dg .arr-dash { fill: none; stroke: var(--ink-2); stroke-width: 1.3; stroke-dasharray: 5 4; marker-end: url(#ah); }
+.dg .ln { fill: none; stroke: var(--ink-2); stroke-width: 1.4; }
+.dg .con { fill: none; stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.dg .sep { stroke: var(--rule); stroke-width: 1.2; stroke-dasharray: 6 5; }
+.dg .seal rect { fill: var(--seal-soft); stroke: var(--seal); stroke-width: 1.3; }
+.dg .seal text { fill: var(--seal); font-size: 10.5px; font-weight: 700; text-anchor: middle; }
+.dg .gate rect { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.1; }
+.dg .gate text { fill: var(--gate); font-family: var(--font-mono); font-size: 10.5px; text-anchor: middle; }
+.dg .agt rect { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1; stroke-dasharray: 3 2; }
+.dg .agt text { fill: var(--agent); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .role rect { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .role text { fill: var(--ink-2); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .num circle { fill: var(--ink); }
+.dg .num text { fill: var(--sheet); font-size: 11px; font-weight: 700; text-anchor: middle; }
+.dg .gdot circle { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.2; }
+.dg .gdot text { fill: var(--gate); font-size: 9px; font-weight: 700; text-anchor: middle; }
+.dg .cmd rect { fill: var(--sheet); stroke: var(--flow); stroke-width: 1.2; }
+.dg .cmd text { fill: var(--flow); font-family: var(--font-mono); font-size: 11px; text-anchor: middle; }
+.dg .band { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; }
+.dg .layer { fill: none; stroke: var(--rule); stroke-width: 1; }
+.dg .slice { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.4; }
+.dg .slice-main { stroke-width: 2.4; }
+</style>
+<defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-ink" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+    <marker id="ah-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-flowc" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+  </defs>
+<rect class="bg" x="-15.5" y="-15.5" width="1111" height="551" rx="10"/>
+
+        <text class="tl tc" x="290" y="30">Classify</text>
+        <text class="tl tc" x="485" y="30">SPEC · deriver procedure</text>
+        <text class="tl tc" x="705" y="30">STORYBOARD · mapper procedure</text>
+        <text class="tl tc" x="880" y="30">Code</text>
+        <text class="tl tc" x="1010" y="30">Check</text>
+
+        <rect class="node" x="20" y="48" width="170" height="330" rx="8"/>
+        <text class="ts tc" x="105" y="170">just say the change</text>
+        <text class="tt tc" x="105" y="196">changer</text>
+        <text class="tr tc" x="105" y="218">intake · classify</text>
+        <g class="seal" transform="rotate(-6 105 248)"><rect x="71.6" y="239" width="66.8" height="18" rx="3"/><text x="105" y="252">Approval</text></g>
+        <text class="ts tc" x="105" y="284">before human confirmation,</text>
+        <text class="ts tc" x="105" y="301">no file is edited</text>
+
+        <path class="arr" d="M192,68 H217"/>
+        <path class="arr" d="M192,126 H217"/>
+        <path class="arr" d="M192,184 H217"/>
+        <path class="arr" d="M192,242 H217"/>
+        <path class="arr" d="M192,300 H217"/>
+        <path class="arr" d="M192,358 H217"/>
+
+        <rect class="node" x="220" y="48" width="140" height="40" rx="8"/>
+        <text class="th tc" x="290" y="73">Addition</text>
+        <rect class="node" x="220" y="106" width="140" height="40" rx="8"/>
+        <text class="th tc" x="290" y="131">Candidate adoption</text>
+        <rect class="node" x="220" y="164" width="140" height="40" rx="8"/>
+        <text class="th tc" x="290" y="189">Change / deletion</text>
+        <rect class="node" x="220" y="222" width="140" height="40" rx="8"/>
+        <text class="th tc" x="290" y="239">Resolve conflict A</text>
+        <text class="ts tc" x="290" y="255">design baseline</text>
+        <rect class="node" x="220" y="280" width="140" height="40" rx="8"/>
+        <text class="th tc" x="290" y="297">Resolve conflict B</text>
+        <text class="ts tc" x="290" y="313">SPEC baseline</text>
+        <rect class="node" x="220" y="338" width="140" height="40" rx="8"/>
+        <text class="th tc" x="290" y="355">Code only</text>
+        <text class="ts tc" x="290" y="371">requirements unchanged</text>
+
+        <rect class="node" x="390" y="48" width="190" height="40" rx="8"/>
+        <text class="tr tc" x="485" y="73">add · new IDs assigned</text>
+        <rect class="node" x="390" y="106" width="190" height="40" rx="8"/>
+        <text class="tr tc" x="485" y="131">add · new IDs assigned</text>
+        <rect class="node" x="390" y="164" width="190" height="40" rx="8"/>
+        <text class="tr tc" x="485" y="189">change · [Removed] + new ID</text>
+        <rect class="node" x="390" y="222" width="190" height="40" rx="8"/>
+        <text class="tr tc" x="485" y="247">change · replace that FR</text>
+        <text class="ts tc" x="485" y="291">no SPEC change</text>
+        <text class="ts tc" x="485" y="352">requirements as-is · code-only fix</text>
+
+        <rect class="node-opt" x="610" y="48" width="190" height="40" rx="8"/>
+        <text class="tr tc" x="705" y="73">promote · register new FR</text>
+        <rect class="node" x="610" y="106" width="190" height="40" rx="8"/>
+        <text class="tr tc" x="705" y="131">promote · reflect candidate</text>
+        <rect class="node-opt" x="610" y="164" width="190" height="40" rx="8"/>
+        <text class="tr tc" x="705" y="189">remap · reflect change</text>
+        <rect class="node" x="610" y="222" width="190" height="40" rx="8"/>
+        <text class="tr tc" x="705" y="247">remap · apply design baseline</text>
+        <rect class="node" x="610" y="280" width="190" height="40" rx="8"/>
+        <text class="tr tc" x="705" y="305">remap · tidy the conflict</text>
+        <text class="ts tc" x="705" y="352">screen change → release via remap</text>
+
+        <rect class="node" x="830" y="48" width="100" height="40" rx="8"/>
+        <text class="tr tc" x="880" y="73">implement</text>
+        <rect class="node" x="830" y="106" width="100" height="40" rx="8"/>
+        <text class="tr tc" x="880" y="131">implement</text>
+        <rect class="node" x="830" y="164" width="100" height="40" rx="8"/>
+        <text class="tr tc" x="880" y="181">implement</text>
+        <text class="tr tc" x="880" y="197">+ tidy up</text>
+        <rect class="node" x="830" y="222" width="100" height="40" rx="8"/>
+        <text class="tr tc" x="880" y="247">implement</text>
+        <rect class="node" x="830" y="280" width="100" height="40" rx="8"/>
+        <text class="tr tc" x="880" y="305">match check</text>
+        <rect class="node" x="830" y="338" width="100" height="40" rx="8"/>
+        <text class="tr tc" x="880" y="355">fix flagged</text>
+        <text class="tr tc" x="880" y="371">parts</text>
+
+        <path class="arr" d="M362,68 H387"/>
+        <path class="arr" d="M582,68 H607"/>
+        <g class="gdot"><circle cx="594" cy="68" r="7"/><text x="594" y="71">✓</text></g>
+        <path class="arr" d="M802,68 H827"/>
+        <g class="gdot"><circle cx="814" cy="68" r="7"/><text x="814" y="71">✓</text></g>
+
+        <path class="arr" d="M362,126 H387"/>
+        <path class="arr" d="M582,126 H607"/>
+        <g class="gdot"><circle cx="594" cy="126" r="7"/><text x="594" y="129">✓</text></g>
+        <path class="arr" d="M802,126 H827"/>
+        <g class="gdot"><circle cx="814" cy="126" r="7"/><text x="814" y="129">✓</text></g>
+
+        <path class="arr" d="M362,184 H387"/>
+        <path class="arr" d="M582,184 H607"/>
+        <g class="gdot"><circle cx="594" cy="184" r="7"/><text x="594" y="187">✓</text></g>
+        <path class="arr" d="M802,184 H827"/>
+        <g class="gdot"><circle cx="814" cy="184" r="7"/><text x="814" y="187">✓</text></g>
+
+        <path class="arr" d="M362,242 H387"/>
+        <path class="arr" d="M582,242 H607"/>
+        <g class="gdot"><circle cx="594" cy="242" r="7"/><text x="594" y="245">✓</text></g>
+        <path class="arr" d="M802,242 H827"/>
+        <g class="gdot"><circle cx="814" cy="242" r="7"/><text x="814" y="245">✓</text></g>
+
+        <path class="arr" d="M362,300 H607"/>
+        <path class="arr" d="M802,300 H827"/>
+        <g class="gdot"><circle cx="814" cy="300" r="7"/><text x="814" y="303">✓</text></g>
+
+        <path class="arr" d="M362,358 H827"/>
+
+        <rect class="node" x="955" y="48" width="110" height="330" rx="8"/>
+        <text class="th tc" x="1010" y="138">After</text>
+        <text class="th tc" x="1010" y="155">code fixes</text>
+        <g class="gate"><rect x="968.075" y="166" width="83.85" height="18" rx="9"/><text x="1010" y="179">✓ verify ×4</text></g>
+        <g class="gate"><rect x="961" y="192" width="98" height="18" rx="9"/><text x="1010" y="205">✓ floor ×3</text></g>
+        <g class="gate"><rect x="968.075" y="218" width="83.85" height="18" rx="9"/><text x="1010" y="231">✓ run check</text></g>
+        <text class="ts tc" x="1010" y="266">if candidates</text>
+        <text class="th tc" x="1010" y="286">pdca recheck</text>
+        <text class="ts tc" x="1010" y="304">required</text>
+
+        <path class="arr" d="M932,68 H952"/>
+        <path class="arr" d="M932,126 H952"/>
+        <path class="arr" d="M932,184 H952"/>
+        <path class="arr" d="M932,242 H952"/>
+        <path class="arr" d="M932,300 H952"/>
+        <path class="arr" d="M932,358 H952"/>
+
+        <line class="sep" x1="20" y1="396" x2="1065" y2="396"/>
+
+        <path class="arr-dash" d="M105,380 V480 Q105,488 113,488 H217"/>
+        <path class="arr-dash" d="M105,422 Q105,430 113,430 H217"/>
+
+        <rect class="node-muted" x="220" y="410" width="140" height="40" rx="8"/>
+        <text class="th tc" x="290" y="427">Dev-phase request</text>
+        <text class="ts tc" x="290" y="443">unfinished bundles remain</text>
+        <rect class="node-muted" x="220" y="468" width="140" height="40" rx="8"/>
+        <text class="th tc" x="290" y="493">New feature build</text>
+
+        <path class="arr-dash" d="M362,430 H387"/>
+        <path class="arr-dash" d="M362,488 H387"/>
+        <rect class="node-muted" x="390" y="410" width="540" height="40" rx="8"/>
+        <text class="tr tc" x="660" y="427">not handled by changer — guided to this order (to enter the progress list)</text>
+        <text class="tm tc" x="660" y="443">/develojt-spec-deriver → /develojt-spec-spliter → next bundle</text>
+        <rect class="node-muted" x="390" y="468" width="540" height="40" rx="8"/>
+        <text class="tr tc" x="660" y="485">not handled by changer — guided to the builder</text>
+        <text class="tm tc" x="660" y="501">/develojt-code-builder</text>
+      
+</svg>

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="-16 -16 1112 442" width="1112" height="442" role="img" aria-label="From this repository, install.sh copies into the global ~/.claude; at a project root, /develojt-init copies the global originals into the project's .claude and creates the deployed version stamp. The project's .claude is read-only, and improvements to the norms are made in the original repository and then spread by re-initialization.">
+<title>Figure 9. Installation and deployment</title>
+<style>
+svg {
+  --paper: #F2F4F6;
+  --sheet: #FFFFFF;
+  --ink: #16202A;
+  --ink-2: #4F5D6B;
+  --rule: #D3DAE1;
+  --flow: #1D5F8A;
+  --flow-soft: #E2EDF6;
+  --gate: #16795A;
+  --gate-soft: #DFF1E9;
+  --seal: #BF3A2E;
+  --seal-soft: #FBE6E2;
+  --agent: #94650F;
+  --agent-soft: #F5EDDA;
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+@media (prefers-color-scheme: dark) { svg {
+  --paper: #0E1419; --sheet: #141C23; --ink: #E2E8EE; --ink-2: #98A6B4; --rule: #2A3743;
+  --flow: #72B4E0; --flow-soft: #15283A; --gate: #4DC291; --gate-soft: #11302A;
+  --seal: #F07B6D; --seal-soft: #3A1E1A; --agent: #E0B25A; --agent-soft: #332811;
+  
+} }
+.bg { fill: var(--sheet); stroke: var(--rule); stroke-width: 1; }
+.mk-seal { display: inline-block; padding: 0 5px; border: 1.5px solid var(--seal); border-radius: 3px; background: var(--seal-soft); color: var(--seal); font-weight: 700; font-size: 11px; line-height: 17px; transform: rotate(-6deg); }
+.mk-gate { display: inline-block; padding: 0 7px; border: 1px solid var(--gate); border-radius: 9px; background: var(--gate-soft); color: var(--gate); font-family: var(--font-mono); font-size: 11px; line-height: 17px; }
+.mk-agent { display: inline-block; padding: 0 7px; border: 1px dashed var(--agent); border-radius: 9px; background: var(--agent-soft); color: var(--agent); font-weight: 700; font-size: 11px; line-height: 17px; }
+.mk-file { font-family: var(--font-mono); font-size: 12px; color: var(--flow); }
+.mk-opt { display: inline-block; width: 26px; height: 15px; border: 1.3px dashed var(--ink-2); border-radius: 4px; }
+.mk-ink { fill: var(--ink-2); }
+.mk-flowc { fill: var(--flow); }
+.dg text { font-family: var(--font-sans); font-size: 13px; fill: var(--ink); }
+.dg .tt { font-size: 14.5px; font-weight: 700; }
+.dg .th { font-size: 13.5px; font-weight: 700; }
+.dg .tr { font-size: 12.5px; }
+.dg .ts { font-size: 11.5px; fill: var(--ink-2); }
+.dg .tl { font-size: 12px; font-weight: 700; fill: var(--ink-2); letter-spacing: .02em; }
+.dg .tm { font-family: var(--font-mono); font-size: 11px; fill: var(--flow); }
+.dg .tmi { font-family: var(--font-mono); font-size: 11px; fill: var(--ink); }
+.dg .ta { font-size: 11.5px; font-weight: 700; fill: var(--agent); }
+.dg .b { font-weight: 700; }
+.dg .tc { text-anchor: middle; }
+.dg .te { text-anchor: end; }
+.dg .bad { fill: var(--seal); }
+.dg .good { fill: var(--gate); }
+.dg .node { fill: var(--sheet); stroke: var(--ink); stroke-width: 1.2; }
+.dg .node-opt { fill: var(--sheet); stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.dg .node-flow { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.3; }
+.dg .node-agent { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1.2; stroke-dasharray: 5 3; }
+.dg .node-muted { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; stroke-dasharray: 4 4; }
+.dg .note { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .snip { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .arr { fill: none; stroke: var(--ink-2); stroke-width: 1.4; marker-end: url(#ah); }
+.dg .arr-flow { fill: none; stroke: var(--flow); stroke-width: 1.6; marker-end: url(#ah-flow); }
+.dg .arr-dash { fill: none; stroke: var(--ink-2); stroke-width: 1.3; stroke-dasharray: 5 4; marker-end: url(#ah); }
+.dg .ln { fill: none; stroke: var(--ink-2); stroke-width: 1.4; }
+.dg .con { fill: none; stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.dg .sep { stroke: var(--rule); stroke-width: 1.2; stroke-dasharray: 6 5; }
+.dg .seal rect { fill: var(--seal-soft); stroke: var(--seal); stroke-width: 1.3; }
+.dg .seal text { fill: var(--seal); font-size: 10.5px; font-weight: 700; text-anchor: middle; }
+.dg .gate rect { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.1; }
+.dg .gate text { fill: var(--gate); font-family: var(--font-mono); font-size: 10.5px; text-anchor: middle; }
+.dg .agt rect { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1; stroke-dasharray: 3 2; }
+.dg .agt text { fill: var(--agent); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .role rect { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .role text { fill: var(--ink-2); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.dg .num circle { fill: var(--ink); }
+.dg .num text { fill: var(--sheet); font-size: 11px; font-weight: 700; text-anchor: middle; }
+.dg .gdot circle { fill: var(--gate-soft); stroke: var(--gate); stroke-width: 1.2; }
+.dg .gdot text { fill: var(--gate); font-size: 9px; font-weight: 700; text-anchor: middle; }
+.dg .cmd rect { fill: var(--sheet); stroke: var(--flow); stroke-width: 1.2; }
+.dg .cmd text { fill: var(--flow); font-family: var(--font-mono); font-size: 11px; text-anchor: middle; }
+.dg .band { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; }
+.dg .layer { fill: none; stroke: var(--rule); stroke-width: 1; }
+.dg .slice { fill: var(--flow-soft); stroke: var(--flow); stroke-width: 1.4; }
+.dg .slice-main { stroke-width: 2.4; }
+</style>
+<defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-ink" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+    <marker id="ah-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="mk-flowc" d="M0,0.8 L10,5 L0,9.2 z"/></marker>
+  </defs>
+<rect class="bg" x="-15.5" y="-15.5" width="1111" height="441" rx="10"/>
+
+        <rect class="node" x="20" y="40" width="270" height="260" rx="8"/>
+        <text class="th" x="36" y="64">This repository</text>
+        <text class="tm" x="36" y="92">develojt-skill-pipeline/</text>
+        <text class="tm" x="36" y="112">├ install.sh</text>
+        <text class="tm" x="36" y="132">├ skills/develojt-init/</text>
+        <text class="tm" x="36" y="152">├ develojt-skills/</text>
+        <text class="tm" x="36" y="172">│ ├ skills/</text>
+        <text class="ts" x="170" y="172">7 skills</text>
+        <text class="tm" x="36" y="192">│ ├ agents/</text>
+        <text class="ts" x="170" y="192">2 agents</text>
+        <text class="tm" x="36" y="212">│ ├ rules/</text>
+        <text class="ts" x="170" y="212">16 rules</text>
+        <text class="tm" x="36" y="232">│ └ version.md</text>
+        <text class="tm" x="36" y="252">└ README.md</text>
+
+        <path class="arr-flow" d="M292,170 H397"/>
+        <g class="cmd"><rect x="294" y="138" width="102" height="22" rx="5"/><text x="345" y="153">sh install.sh</text></g>
+
+        <rect class="node" x="400" y="40" width="240" height="260" rx="8"/>
+        <text class="th" x="416" y="64">~/.claude · global install</text>
+        <text class="tm" x="416" y="92">~/.claude/</text>
+        <text class="tm" x="416" y="112">├ skills/develojt-init/</text>
+        <text class="tm" x="416" y="132">└ develojt-skills/</text>
+        <text class="tm" x="430" y="152">├ skills/ agents/ rules/</text>
+        <text class="tm" x="430" y="172">└ version.md</text>
+        <text class="ts" x="416" y="214">the originals live only here</text>
+        <text class="ts" x="416" y="232">copied per project by init</text>
+
+        <path class="arr-flow" d="M642,170 H757"/>
+        <g class="cmd"><rect x="646" y="138" width="108" height="22" rx="5"/><text x="700" y="153">/develojt-init</text></g>
+
+        <rect class="node" x="760" y="40" width="300" height="260" rx="8"/>
+        <text class="th" x="776" y="64">project/.claude · copy</text>
+        <g class="role"><rect x="996" y="52" width="56" height="16" rx="8"/><text x="1024" y="64">read-only</text></g>
+        <text class="tm" x="776" y="92">.claude/</text>
+        <text class="tm" x="776" y="112">├ skills/</text>
+        <text class="ts" x="900" y="112">7</text>
+        <text class="tm" x="776" y="132">├ agents/</text>
+        <text class="ts" x="900" y="132">2</text>
+        <text class="tm" x="776" y="152">├ rules/</text>
+        <text class="ts" x="900" y="152">15</text>
+        <text class="tm" x="776" y="172">└ version.md</text>
+        <text class="ts" x="900" y="172">deployed version record</text>
+        <text class="ts" x="776" y="214">never record anything here</text>
+        <text class="ts" x="776" y="232">re-initializing overwrites it with the originals</text>
+
+        <text class="ts tc" x="345" y="326">copied as-is into the global folder</text>
+        <text class="ts tc" x="345" y="344">stops if already present → --force after approval</text>
+        <text class="ts tc" x="700" y="326">design-philosophy excluded · version record created</text>
+        <text class="ts tc" x="700" y="344">differing content marked ! → --force after approval</text>
+
+        <path class="arr-dash" d="M910,302 V384 Q910,392 902,392 H163 Q155,392 155,384 V303"/>
+        <text class="ts tc" x="532" y="384">Rule changes are made in the original repository and reflected by re-initializing</text>
+      
+</svg>
