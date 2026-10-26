@@ -326,6 +326,6 @@ Paths: `.claude/skills/develojt-code-pdca/` (local first) or `~/.claude/skills/d
 
 ---
 
-version: 1.0.0
-latest: 2026.10.23
+version: 1.1.0
+latest: 2026.10.26
 Made by develojt

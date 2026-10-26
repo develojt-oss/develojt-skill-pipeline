@@ -25,6 +25,7 @@ while leaving part of the work out.
 13. [Updating and reinstalling](#13-updating-and-reinstalling)
 14. [Repository structure](#14-repository-structure)
 15. [License](#15-license)
+16. [Versions](#16-versions)
 
 ---
 
@@ -481,3 +482,10 @@ develojt-skill-pipeline/
 ## 15. License
 
 [MIT](LICENSE)
+
+## 16. Versions
+
+| Version | Date | Key addition |
+|---|---|---|
+| 1.1.0 | 2026-10-26 | The names and shapes of interfaces that outside parties build against (APIs, command arguments, file formats, etc.) are finalized in the SPEC, and the code follows them as-is |
+| 1.0.0 | 2026-10-23 | First public release |

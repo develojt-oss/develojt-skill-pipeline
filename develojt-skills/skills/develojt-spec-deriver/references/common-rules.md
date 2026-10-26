@@ -66,6 +66,18 @@ FR-epic#-Eseq  : edge case                    e.g., FR-03-E01
 Boundary test: "does changing this value change the requirement's intent?" → Yes = What, No = How.
 Exception: numbers the user explicitly specified in the PRD (deterministic items) are recorded as-is.
 
+**[Required] The shape of an external-consumer interface is not How — the "internal structure" in the exclusion list above is limited to what is used only inside this repository's code:**
+For an interface that something outside this repository's code builds against (an API that other programs call, command arguments and exit codes that people or scripts supply,
+file and message formats that other systems read and write, public function signatures that outside developers use, etc.), its **shape itself** (paths, commands, field names, headers, error codes, formats)
+is behavior observed from outside — changing it breaks that consumer, so it is What under the boundary test above as well. Therefore:
+- Never leave it as `[Free: reason]` — handed to the implementation stage with the value blank, it gets decided differently each session, and since `[Free]` values are not inspection targets, verification cannot catch that drift.
+- If the PRD has no concrete value, the agent **proposes a concrete value** and the human finalizes it at SPEC approval (as with other derivation decisions, SPEC approval is the finalization gate — the decision-maker is the human).
+  Common conventions (naming style, error response structure, how authentication is passed, time notation, list pagination, etc.) are cross-cutting, so write them as `NFR-00-xxx`; individual shapes follow those conventions.
+- Write each unit a consumer builds against (one endpoint, one command, one format) as an **FR row with an ID** — enumerate the request/response items within that sentence,
+  or bind them to that row with a table that has a Related IDs column, like the behavior chain table. A table without IDs is bound neither to the code (`@spec`) nor to inspection (coverage).
+- If it is unclear whether the consumer is outside this repository, lean toward surfacing it in the SPEC (the human can remove it at approval). Internal interfaces used only by screens and modules inside this repository
+  are not covered — How as before (autonomous at the implementation stage).
+
 **[Required] Verifiability — forbidden phrasing:**
 Subjective phrases like "high quality", "photorealistic", "naturally", "adequately", "imposing" are forbidden.
 Always replace them with measurable criteria.

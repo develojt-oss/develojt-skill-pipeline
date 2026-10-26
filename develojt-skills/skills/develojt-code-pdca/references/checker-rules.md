@@ -11,6 +11,10 @@
   Only what remains unfound to the end is a defect — and the evidence then is "the traced path and the broken point".
 - **Choices carrying `[Free: reason]` are not inspection targets.** However, if that choice's *result contradicts
   another SPEC requirement*, that is a defect (e.g., a [Free]-chosen retry count is negative, voiding the retry limit).
+- **For external-consumer interface requirements, the literal is the requirement.** For the paths, commands, field names, headers, error codes, and formats the SPEC wrote as rows with IDs
+  (interfaces that something outside this repository's code builds against — the deriver boundary rule), check whether the code puts out **exactly that value**.
+  A similar but different name or shape (differing spelling, notation, or structure) is requirement content unimplemented (M1) or reaching a different target (W2) — neither a `[Free]` nitpick
+  nor a style nitpick (style is notation inside the code; this is a value that goes out).
 - **Sweeping expressions mean exhaustive coverage.** When a requirement's target/location is sweeping ("on the targets",
   "all", "every", "whenever X occurs"), enumerate every occurrence site of that class in the scope's code and confirm
   the response reaches each site. Satisfying only some sites is a defect, not [Free] — [Free] delegates the value/method,
